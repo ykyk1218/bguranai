@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>All:</strong>
+  <%= @post.all %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @post.rank %>
+</p>
+
+<p>
+  <strong>Constellation:</strong>
+  <%= @post.constellation %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @post.result %>
+</p>
+
+<p>
+  <strong>Lucky:</strong>
+  <%= @post.lucky %>
+</p>
+
+<p>
+  <strong>Advice:</strong>
+  <%= @post.advice %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @post.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

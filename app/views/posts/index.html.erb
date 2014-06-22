@@ -1,0 +1,37 @@
+<h1>Listing posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>All</th>
+      <th>Rank</th>
+      <th>Constellation</th>
+      <th>Result</th>
+      <th>Lucky</th>
+      <th>Advice</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.all %></td>
+        <td><%= post.rank %></td>
+        <td><%= post.constellation %></td>
+        <td><%= post.result %></td>
+        <td><%= post.lucky %></td>
+        <td><%= post.advice %></td>
+        <td><%= post.created_at %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

@@ -1,0 +1,50 @@
+<script src="/js/flotr2.min.js"></script>
+
+<% @uranais.each do |uranai|%>
+<%= uranai.date %>：<%= uranai.constellation %>：<%= uranai.rank %><br>
+<% end %>
+
+<div id="graph" style="width: 600px; height: 400px;">
+	
+</div>
+<script type="text/javascript">
+(function basic(container) {
+	var ranks_Y = [12,11,10,9,8,7,6,5,4,3,2,1];
+	var ticks_X = [];
+	<% @uranais.each_with_index do |uranai, i|%>
+		ticks_X.push[<%= i %>, '<%= uranai.date %>']
+	<% end %>
+	
+	
+    var d1 = [
+    <% @uranais.each_with_index do |uranai, i|%>
+        [<%= i %>, <%= uranai.rank %>],
+    <% end %>
+    ];      
+    data = [{
+        data: d1,
+        label: "<%= @uranais[0].constellation %>"
+    }];
+
+    function labelFn(label) {
+        return label;
+    }
+
+    graph = Flotr.draw(container, data, {
+        legend: {
+            position: "se",
+            labelFormatter: labelFn,
+            backgroundColor: "#D2E8FF",
+        },
+        xaxis: {
+        	ticks: ticks_X,
+        	title: "日",
+        },
+        yaxis: {
+        	ticks: ranks_Y,
+        	title: '順位'
+        },
+        HtmlText: false
+    });
+})(document.getElementById("graph"));
+</script>

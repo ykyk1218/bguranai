@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  all: MyText
+  rank: 1
+  constellation: MyString
+  result: MyText
+  lucky: MyText
+  advice: MyText
+  created_at: 2014-06-01
+
+two:
+  all: MyText
+  rank: 1
+  constellation: MyString
+  result: MyText
+  lucky: MyText
+  advice: MyText
+  created_at: 2014-06-01
